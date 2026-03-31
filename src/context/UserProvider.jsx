@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { userContext } from './UserContext';
+import { userContext } from '.././context/userContext';
 import { json } from 'zod';
 
 function UserProvider({ children }) {
