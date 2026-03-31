@@ -1,7 +1,8 @@
 import axios from "axios";
 import { promise } from "zod";
 
-const baseURL = "http://localhost:4001";
+const baseURL = import.meta.env.VITE_API_URL;
+// const baseURL = "http://localhost:4001";
 export const publicInstance = axios.create({ baseURL });
 
 export const privateInstance = axios.create({ baseURL });
