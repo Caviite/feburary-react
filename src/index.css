@@ -1,0 +1,15 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: rgb(212, 206, 206);
+}
+
+ h1{
+  text-align: center;
+}
+div{
+  color: blue;
+} 
