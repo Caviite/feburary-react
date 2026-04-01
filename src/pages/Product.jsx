@@ -64,7 +64,7 @@ export default function Product() {
 `}</style>
 
       {product && product.map((item) => (
-        <div style={{ border: 'thin solid black', margin: '30px', padding: '40px' }} key={item.id}>
+        <div style={{ border: 'thin solid black', margin: '31px', padding: '40px' }} key={item.id}>
           <h2>{item.title}</h2>
           <p>{item.description.slice(0, 100)}...</p>
           <p>Price: ${item.price}</p>
