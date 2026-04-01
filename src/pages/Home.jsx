@@ -1,5 +1,5 @@
 import { useContext, useEffect, useState } from "react";
-import { userContext } from "../context/UserContext";
+import { userContext } from "../context/userContext";
 
 function Home() {
   const {name} = useContext(userContext)
