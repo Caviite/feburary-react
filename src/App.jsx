@@ -16,7 +16,7 @@ import Product from "./pages/Product"
 import Contact from "./pages/Contact"
 import Profile from "./pages/Profile"
 import { Login } from "./pages/Login"
-import Singleproduct from "./pages/singleproduct";
+import Singleproduct from "./pages/Singleproduct"
 import Register from "./pages/Register"
 import Signup from "./pages/Signup"
 
@@ -58,7 +58,7 @@ function App() {
             <Profile />
           </ProtectedRoute>
         } />
-        <Route path="Singleproduct/:id" element={
+        <Route path="singleproduct/:id" element={
           <ProtectedRoute>
             <Singleproduct />
           </ProtectedRoute>

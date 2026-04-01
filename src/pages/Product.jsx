@@ -68,7 +68,7 @@ export default function Product() {
           <h2>{item.title}</h2>
           <p>{item.description.slice(0, 100)}...</p>
           <p>Price: ${item.price}</p>
-          <button onClick={() => navigate(`/Singleproduct/${item._id}`)}>View Details</button>
+          <button onClick={() => navigate(`/singleproduct/${item._id}`)}>View Details</button>
           {/* <button>Add to Cart</button> */}
         </div>
       ))}
