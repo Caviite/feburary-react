@@ -1,13 +1,18 @@
-import React, { useEffect, useState } from 'react'
-import { userContext } from '.././context/userContext';
-import { json } from 'zod';
+import React, { useState } from 'react'
+import { UserContext } from '.././context/userContext';
 
 function UserProvider({ children }) {
 
   const [name, setName] = useState('');
-  const [user, setUser] = useState(null);
-  const [token, setToken] = useState(null);
-  const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState(() => {
+    try {
+      const savedUser = localStorage.getItem('user');
+      return savedUser ? JSON.parse(savedUser) : null;
+    } catch {
+      return null;
+    }
+  });
+  const [token, setToken] = useState(() => localStorage.getItem('token'));
 
   const isAuthenticated = Boolean(token)
 
@@ -20,7 +25,7 @@ function UserProvider({ children }) {
     }
 
     if (user) {
-      localStorage.setItem("user", json.stringify(user))
+      localStorage.setItem("user", JSON.stringify(user))
     }
   }
 
@@ -31,27 +36,6 @@ function UserProvider({ children }) {
     setToken(null)
   }
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem('user')
-    const savedToken = localStorage.getItem('token')
-
-    try {
-      if (savedUser) {
-        const perSavedUser = JSON.parse(savedUser)
-        setUser(perSavedUser)
-      }
-      if (savedToken) {
-        setToken(savedToken)
-      }
-    } catch (error) {
-      console.log(error);
-
-    }
-
-    setLoading(false)
-  }, [])
-
-
   console.log(name, 'from context');
 
   const value = {
@@ -60,12 +44,11 @@ function UserProvider({ children }) {
     login,
     logOut,
     isAuthenticated,
-    loading,
     user
   }
 
   return (
-    <userContext.Provider value={value}> {children} </userContext.Provider>
+    <UserContext.Provider value={value}> {children} </UserContext.Provider>
   )
 }
 

@@ -46,8 +46,8 @@ function Home() {
     <div>
         <h1>Welcome to the Home Page</h1>
         <h1>Name: {name}  </h1>
-        {/* <p>Count: {count}</p>
-        <button onClick={() => setCount(count + 1)}>Increment</button> */}
+        <p>Count: {count}</p>
+        <button onClick={() => setCount(count + 1)}>Increment</button>
 
     </div>
   );

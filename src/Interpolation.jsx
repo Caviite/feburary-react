@@ -1,18 +1,12 @@
 import Interpolations from "./Interpolationmap";
 
 function Interpolation() {
-    const name = "John";
-    const age = 30;
-    const isStudent = true;
-
     const userInfo = {
         firstName: "John",
         lastName: "Doe",
         age: 30,
         isStudent: true
     }
-
-    const userInfoString = `Name: ${userInfo.firstName} ${userInfo.lastName}, Age: ${userInfo.age}, Student: ${userInfo.isStudent}`;
     const user = [
         {
             firstName: "John",

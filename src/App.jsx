@@ -6,7 +6,6 @@ import Interpolations from "./Interpolationmap"
 import Todo from "./Todo"
 import TodoInput from "./Todoinput"
 import TodoList from "./Todolist"
-import { useState } from 'react';
 import Nav from "./component/Nav"
 import ProtectedRoute from "./component/ProtectedRoute"
 import { Routes, Route } from "react-router-dom"

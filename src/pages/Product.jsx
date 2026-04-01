@@ -27,9 +27,9 @@ export default function Product() {
 
       setProduct(res.data.product);
 
-    } catch (error) {
-      console.error("Fetch error details:", error);
-      setError(error.message);
+    } catch (err) {
+      console.error("Fetch error details:", err);
+      setError(err.message);
     } finally {
       setLoading(false);
     }
@@ -45,6 +45,11 @@ export default function Product() {
       <h1>Product Page</h1>
       <button onClick={() => setMonitor(!monitor)}>Refresh Products</button>
 
+      {error && (
+        <div style={{ textAlign: 'center', margin: '50px', color: 'red' }}>
+          <h2>Error: {error}</h2>
+        </div>
+      )}
       {loading && (
         <div style={{ textAlign: 'center', margin: '50px' }}>
           <div style={{ fontSize: '40px' }}>

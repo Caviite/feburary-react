@@ -4,11 +4,12 @@ import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
 import z from 'zod';
 import { publicInstance } from '../api/api';
-import { userContext } from '../context/UserContext';
+import { userContext } from '../context/userContext';
 
 export const Login = () => {
     const [loading, setLoading] = useState(false);
     const [disabled, setDisabled] = useState(false);
+    const [error, setError] = useState(null);
     const navigate = useNavigate()
     const { login } = useContext(userContext)
 
@@ -121,6 +122,7 @@ export const Login = () => {
                 <button disabled={disabled} type="submit" style={buttonStyle}>
                     {loading ? "loading" : "submit"}
                 </button>
+                {error && <p style={{ color: 'red', fontSize: '14px' }}>{error}</p>}
             </form>
 
 
