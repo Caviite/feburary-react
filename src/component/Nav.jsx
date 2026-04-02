@@ -1,7 +1,7 @@
 import { useContext } from "react"
 import NavStyle from "./nav.module.css"
 import { Link } from "react-router-dom"
-import { userContext } from "../context/UserContext"
+import { userContext } from "../context/userContext"
 
 function Nav() {
     const { user, logOut, isAuthenticated } = useContext(userContext)
